@@ -96,7 +96,7 @@ header h2 {
 }
 
 .custom-content {
-  width: 90%;
+  width: 95%;
 }
 
 #content-wrapper {
@@ -105,8 +105,9 @@ header h2 {
 }
 
 #main-content {
-  width: 690px;
+  width: 82%;
   float: left;
+  text-align: center;
 }
 
 #main-content img {
@@ -474,6 +475,54 @@ footer a:hover {
     padding-right: 0;
     margin-left: 0;
   }
+}
+
+#string_input > input{
+  width: 250px;
+  height: 30px;
+  outline: none;
+  padding-left: 5px;
+  font-size: 1.2em;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
+  text-transform: uppercase;
+}
+
+div#tuner {
+  text-align: center;
+}
+
+div#tuner > div {
+  display: inline-block;
+}
+
+select {
+  width: 170px;
+  height: 36px;
+  outline: none;
+  border-radius: 10px;
+  font-size: 1em;
+  -webkit-appearance: none;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
+  background: url(../images/arrow.png) no-repeat right #fff;
+}
+
+div#animate_button > input {
+  height: 50px;
+  width: 150px;
+  background: none;
+  background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat-x;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
+  font-size: 2em;
+  outline: none;
+  margin-top: 10px;
+  color: white;
+  border-radius: 10px;
+}
+
+div#animate_button > input:active {
+  font-size: 1.9em;
 }
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */

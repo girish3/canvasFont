@@ -10,6 +10,9 @@ var Font = (function () {
 		height,
 		width,
 		timer,
+		gradient = false,
+		// for the fillStyle variable
+		gradObject = null,
 		// for sameOrigin2 animation
 		frequency = 500,
 		AnimeId,
@@ -1353,7 +1356,9 @@ var Font = (function () {
 		shape                   = data.shape ? data.shape : shape;
 		acceleration						= data.acceleration ? data.acceleration : acceleration;
 		friction								= data.friction ? data.friction : friction;
-		
+		gradient   							= data.gradient ? true : false;
+		gradObject 					    = data.gradObject ? data.gradObject : null;
+
 		if(AnimeId) {
 			window.cancelAnimationFrame(AnimeId);
 		}
@@ -1539,9 +1544,17 @@ var Font = (function () {
 				c = this.context,
 				sides = this.sides,
 				angle = 0,
+				grad = null,
 				counterclockwise = false;
 
-			c.fillStyle = this.color || 'black';	
+			if(gradient && gradObject) {
+				grad = ctx.createRadialGradient(x - r / 3, y - r / 3, 0, x, y, r);
+				grad.addColorStop(0,gradObject.start);
+				grad.addColorStop(1,gradObject.stop)
+				c.fillStyle = grad;
+			} else {
+				c.fillStyle = this.color || 'black';
+			}
 
 			if(sides === 0) {
 				c.beginPath();
@@ -1549,18 +1562,16 @@ var Font = (function () {
 				c.fill();
 				return;
 			} 	
-			// Compute vertex position and begin a subpath there
+			// drawing a polygon
 			c.moveTo(x + r * Math.sin(0), y - r * Math.cos(0));
-			var delta = 2 * Math.PI / sides; // Angle between vertices
+			var delta = 2 * Math.PI / sides;
 			
-			for(var i = 1; i < sides; i++) { // For remaining vertices
-				// Compute angle of this vertex
+			for(var i = 1; i < sides; i++) {
 				angle += counterclockwise?-delta:delta;
-				// Compute position of vertex and add a line to it
 				c.lineTo(x + r * Math.sin(angle), y - r * Math.cos(angle));
 			}
 
-			c.closePath(); // Connect last vertex back to the first
+			c.closePath(); 
 			c.fill();		
 		},
 

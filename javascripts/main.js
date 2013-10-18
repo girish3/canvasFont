@@ -27,7 +27,7 @@ $(function () {
 			}
 		}
 	
-	var regex = /^([A-Z]+)$/;
+	var regex = /^([A-Z\s]+)$/;
 	$('#animate_button').click(function () {
 		string = $('#string_input > input').val();
 		string = string.toUpperCase();

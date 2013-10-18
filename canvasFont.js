@@ -1,3 +1,16 @@
+/*!
+ * canvasFont v0.0.1
+ * https://github.com/auds1n/canvasFont
+ *
+ * Released under the BSD license
+ *
+ * Date: 2013-10-19
+ * 
+ * author: Girish Budhwani
+ */
+
+// Anonymous function, and it returns two public
+// functions initConfig() and create()
 var Font = (function () {
 	var
 		// allowed values = random, sameOrigin1, off

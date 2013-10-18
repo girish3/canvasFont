@@ -64,6 +64,8 @@ a:hover {
 }
 
 header {
+  position: relative;
+  z-index: -1;
   padding-top: 20px;
   padding-bottom: 20px;
   font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
@@ -99,13 +101,25 @@ header h2 {
   width: 95%;
 }
 
+#canvas {
+  position: relative;
+  top: -220px;
+  z-index: -1;
+}
+
+#mycanvas {
+  margin-top: 10px;
+}
+
 #content-wrapper {
+  position: relative;
   border-top: solid 1px #fff;
   padding-top: 30px;
 }
 
 #main-content {
   width: 82%;
+  height: 200px;
   float: left;
   text-align: center;
 }
@@ -491,6 +505,7 @@ footer a:hover {
 
 div#tuner {
   text-align: center;
+  z-index: 2;
 }
 
 div#tuner > div {

@@ -43,11 +43,11 @@
             </div>
             <div id="color_input">
               <select>
-                <option value="1">color pattern</option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+                <option value="blue_pattern">color pattern</option>
+                <option value="simple_black">simple black</option>
+                <option value="black_pattern">black gradient</option>
+                <option value="blue_pattern">blue gradient</option>
+                <option value="green_pattern">green gradient</option>
               </select>
             </div>
             <div id="size_input">
@@ -74,6 +74,9 @@
           <div id="animate_button">
             <input type="button" value="Animate">
           </div>
+          <div id="canvas">
+            <canvas id="mycanvas" width='1000' height='600'></canvas>
+          </div>
         </section>
 
         <aside id="sidebar">
@@ -92,16 +95,20 @@
       </div>
     </div>
 
-            <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-44032882-4");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+    
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/canvasFont.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-44032882-4");
+      pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
 
   </body>
 </html>

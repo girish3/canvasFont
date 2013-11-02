@@ -11,7 +11,7 @@ $(function () {
 		pattern = {
 			blue_pattern: {
 				start: 'white',
-				stop: '2d77cc'
+				stop: '#2d77cc'
 			},
 			simple_black: {
 				start: 'black',

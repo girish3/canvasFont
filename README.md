@@ -51,6 +51,8 @@ data = {
   // animation type
   // allowed values 'random', 'sameOrigin1', 'sameOrigin2', 'off'
   animation: 'random',
+  // for manually controlling the animation
+  manualAnimation: 'false',
   // shape of the marbles 
   // allowed values 'circle', 'square', 'triangle', 'random'
   shape: 'circle',

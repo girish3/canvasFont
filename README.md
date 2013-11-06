@@ -70,6 +70,9 @@ data = {
     end: 'blue'
   }
 };
+/* if manualAnimation is true then you have to call 
+* Font.animateFrame() in you animation loop
+*/
 
 Font.initConfig(data);
 ```

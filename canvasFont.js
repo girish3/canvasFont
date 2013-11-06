@@ -28,6 +28,8 @@ var Font = (function () {
 		gradObject = null,
 		// for sameOrigin2 animation
 		frequency = 500,
+		// manually manipulating frame speed
+		manualAnimation,
 		AnimeId,
 		colors = ['greenyellow','aqua','chartreuse','orange','sandybrown','thistle'],
 		acceleration = 0.5,
@@ -38,7 +40,7 @@ var Font = (function () {
 			'square': 4,
 		},
 		// for generating random sides see getSides()
-		side = ['triangle', 'circle', 'square'];
+		side = ['triangle', 'circle', 'square'],
 		atoms = [],
 		context = null,
 		requestAnimFrame = (function(){
@@ -1371,6 +1373,7 @@ var Font = (function () {
 		friction								= data.friction ? data.friction : friction;
 		gradient   							= data.gradient ? true : false;
 		gradObject 					    = data.gradObject ? data.gradObject : null;
+		manualAnimation					= data.manualAnimation ? data.manualAnimation : false;
 
 		if(AnimeId) {
 			window.cancelAnimationFrame(AnimeId);
@@ -1387,7 +1390,6 @@ var Font = (function () {
 		// info is the object returned by the letter
 		var info;
 		
-		atoms  = [];
 		x      = x || 0;
 		y      = y || 0;
 		size   = size || 50;
@@ -1402,7 +1404,14 @@ var Font = (function () {
 		animate();
 	}
 	// implement this function
-	function createFrame () {
+	function animateFrame () {
+		if(animation !== 'sameOrigin2') {
+			update();
+			draw();
+		}
+		else {
+			updateSameOrigin2();
+		}	
 	}
 
 	function animate () {
@@ -1420,7 +1429,7 @@ var Font = (function () {
 			atoms[i] = new Shape(data);
 		}
 
-		if (animation != 'off') {
+		if (animation != 'off' && !manualAnimation) {
 			loop();
 		}
 		else {
@@ -1561,9 +1570,9 @@ var Font = (function () {
 				counterclockwise = false;
 
 			if(gradient && gradObject) {
-				grad = ctx.createRadialGradient(x - r / 3, y - r / 3, 0, x, y, r);
+				grad = context.createRadialGradient(x - r / 3, y - r / 3, 0, x, y, r);
 				grad.addColorStop(0,gradObject.start);
-				grad.addColorStop(1,gradObject.stop)
+				grad.addColorStop(1,gradObject.stop);
 				c.fillStyle = grad;
 			} else {
 				c.fillStyle = this.color || 'black';
@@ -1605,6 +1614,7 @@ var Font = (function () {
 
 	return {
 		create: create,
+		animateFrame: animateFrame,
 		initConfig: initConfig
 	};
 })();

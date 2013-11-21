@@ -7,8 +7,8 @@ canvasFont is a customizable font for canvas. It can be used like any other font
 Check the demo <a href="http://auds1n.github.io/canvasFont/">here</a>.
 
 - **Version:** 0.0.1
-- **Compressed:** 39kb
-- **Uncompressed:** 15kb
+- **Compressed:** 15kb
+- **Uncompressed:** 39kb
 
 # Basic Usage
 

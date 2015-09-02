@@ -1,10 +1,10 @@
 canvasFont
 ==========
 
-by Girish Budhwani - http://www.audsin.in
+by Girish Budhwani
 
 canvasFont is a customizable font for canvas. It can be used like any other font but with lots of extra features.
-Check the demo <a href="http://auds1n.github.io/canvasFont/">here</a>.
+Check the demo <a href="http://girish3.github.io/canvasFont/">here</a>.
 
 - **Version:** 0.0.1
 - **Compressed:** 15kb
